@@ -3,7 +3,7 @@
  */
 package bowling;
 
-public class Library {
+public class Game {
     public boolean someLibraryMethod() {
         return true;
     }
