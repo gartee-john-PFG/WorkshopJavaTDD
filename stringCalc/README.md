@@ -11,10 +11,10 @@ Build a method
 * allow newlines (\n) to be embedded in the input string ... they should be ignored
 * allow a different single-character delimiter to be specified
   * delimiter appears as the beginning of the string in the form:  
-```
-    //[delimiter]\n[rest of input values with specified delimiter  
-    e.g. "//[;]``\``n1;2;3;4"
-```  
+
+    "//[delimiter]\n[rest of input values with specified delimiter"  
+    e.g. "//[;]\n1;2;3;4"
+
 * using a negative number in the input string throws the exception "negatives not allowed: [number]"], returning the negative number that was passed in [number]
 * using multiple negative numbers in the input string will return all of them in the exception as a comma-separated list
     * e.g. throw "negative numbers not allowed: [num1], [num2], etc."
