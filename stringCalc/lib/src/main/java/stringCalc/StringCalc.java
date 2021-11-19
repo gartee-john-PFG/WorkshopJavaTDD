@@ -1,4 +1,5 @@
 package stringCalc;
+import java.util.Arrays;
 
 //  String calculator in Java
 
@@ -30,7 +31,24 @@ package stringCalc;
 //              example -> "//[*][;][&&]\n1&&2*3;4"
 
 public class StringCalc {
-    public int Add(String  values) {
-        return -1;
+    public int Add(String values) {
+        if (values.equals(""))
+            return 0;
+
+        values = values.replace('\n', '0');
+        int[] numbers = Arrays.stream(values.split(","))
+                .mapToInt(Integer::parseInt).toArray();
+
+        if (numbers.length == 1)
+            return numbers[0];
+
+        int sum = 0;
+
+        for (int num : numbers) {
+            sum += num;
+        }
+
+        return sum;
+
     }
 }

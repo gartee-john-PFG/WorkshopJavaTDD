@@ -1,7 +1,7 @@
-
 package stringCalc;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 //  Rules of TDD: (Transforms that change behavior w/o changing structure)
@@ -18,8 +18,29 @@ import static org.junit.jupiter.api.Assertions.*;
 //  3.  Run your tests on EVERY code change
 
 class StringCalcTest {
-    @Test void testSomeLibraryMethod() {
-        StringCalc calc = new StringCalc();
-        assertEquals(0,calc.Add(""));
+    StringCalc calc = new StringCalc();
+
+    @Test
+    void sendingEmptyStringReturnsZero() {
+        assertEquals(0, calc.Add(""));
+    }
+
+    @Test
+    void sendingSingleNumberReturnsThatNumber() {
+        assertEquals(13, calc.Add("13"));
+    }
+
+    @Test
+    void sendingCommaDelimitedPairReturnsTheirSum() {
+        assertEquals(8, calc.Add("3,5"));
+    }
+
+    @Test
+    void sendingListOfCommaDelimitedValuesReturnsTheirSum() {
+        assertEquals(10, calc.Add("3,5,2"));
+    }
+
+    @Test void newLinesAreIgnoredInString(){
+        assertEquals(10, calc.Add("3,\n,5,2"));
     }
 }
